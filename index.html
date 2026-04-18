@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorldStreamingOFF</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: white;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827, #0f172a);
+      padding: 50px 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero span {
+      display: inline-block;
+      background: rgba(34, 211, 238, 0.12);
+      color: #67e8f9;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hero-note {
+      margin-top: 25px;
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.12);
+      color: #a7f3d0;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    h2.section-title {
+      font-size: 32px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
+
+    p.section-desc {
+      color: #94a3b8;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.12);
+      color: #67e8f9;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .price {
+      color: #67e8f9;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      color: #e2e8f0;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #22d3ee;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 14px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .steps-box, .contact-box, .faq-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 15px;
+      border-radius: 16px;
+    }
+
+    .step-number {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #22d3ee;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .contact-info {
+      background: rgba(15, 23, 42, 0.75);
+      border-radius: 14px;
+      padding: 15px;
+      margin-bottom: 15px;
+      color: #e2e8f0;
+    }
+
+    .warning {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      color: #fde68a;
+      padding: 15px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .faq-item {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #64748b;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .two-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <span>WorldStreamingOFF</span>
+      <h1>Compra tus plataformas favoritas de forma rápida y fácil</h1>
+      <p>
+        Catálogo claro, precios visibles y atención directa para que el cliente entienda rápido qué desea comprar.
+      </p>
+      <div class="hero-note">
+        Entrega inmediata ⚡ | Soporte durante todo el servicio
+      </div>
+    </section>
+
+    <h2 class="section-title">Servicios disponibles</h2>
+    <p class="section-desc">
+      Todo ordenado para que el cliente vea rápido el precio, beneficios y forma de compra.
+    </p>
+
+    <section class="grid">
+
+      <div class="card">
+        <span class="badge">Más vendido</span>
+        <h3>Netflix Premium</h3>
+        <div class="price">S/18.00 mensual</div>
+        <p>Películas, series y contenido popular para disfrutar todos los días.</p>
+        <ul>
+          <li>1 dispositivo</li>
+          <li>Activación inmediata</li>
+          <li>Soporte y garantía</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Netflix%20Premium">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Prime Video</h3>
+        <div class="price">S/7.00 mensual</div>
+        <p>Series, películas y contenido exclusivo con acceso rápido.</p>
+        <ul>
+          <li>Acceso completo</li>
+          <li>Activación rápida</li>
+          <li>Soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Prime%20Video">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <span class="badge">4K</span>
+        <h3>Disney+ Premium</h3>
+        <div class="price">S/10.00 mensual</div>
+        <p>Disney, Marvel, Star Wars y más en excelente calidad.</p>
+        <ul>
+          <li>Resolución 4K</li>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Disney%2B%20Premium">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <span class="badge">4K</span>
+        <h3>Max Platino</h3>
+        <div class="price">S/8.00 mensual</div>
+        <p>Series premium, películas y títulos exclusivos.</p>
+        <ul>
+          <li>Resolución 4K</li>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Max%20Platino">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Max Standard</h3>
+        <div class="price">S/5.00 mensual</div>
+        <p>Opción práctica para disfrutar contenido de Max.</p>
+        <ul>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Max%20Standard">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Crunchyroll</h3>
+        <div class="price">S/5.00 mensual</div>
+        <p>Anime y series para disfrutar sin complicaciones.</p>
+        <ul>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Crunchyroll">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Paramount+</h3>
+        <div class="price">S/7.00 mensual</div>
+        <p>Películas, series y contenido variado en una sola plataforma.</p>
+        <ul>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Paramount%2B">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Vix Premium</h3>
+        <div class="price">S/5.00 mensual</div>
+        <p>Contenido latino y entretenimiento premium.</p>
+        <ul>
+          <li>1 dispositivo</li>
+          <li>Garantía y soporte</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Vix%20Premium">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>ChatGPT</h3>
+        <div class="price">S/10.00 mensual</div>
+        <p>Herramienta útil para estudio, trabajo y productividad.</p>
+        <ul>
+          <li>Acceso inmediato</li>
+          <li>Uso personal</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20ChatGPT">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>IPTV</h3>
+        <div class="price">S/10.00 mensual</div>
+        <p>Canales en vivo y variedad de contenido en un solo servicio.</p>
+        <ul>
+          <li>Más de 3500 canales</li>
+          <li>Acceso rápido</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20IPTV">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Canva Pro</h3>
+        <div class="price">S/3.00 mensual</div>
+        <p>Diseño y herramientas premium activadas en tu propio correo.</p>
+        <ul>
+          <li>A tu mismo correo</li>
+          <li>Acceso completo</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Canva%20Pro">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>YouTube Premium Individual</h3>
+        <div class="price">S/5.00 por 1 mes</div>
+        <p>Disfruta YouTube sin anuncios con activación en tu correo.</p>
+        <ul>
+          <li>Plan individual</li>
+          <li>A tu mismo correo</li>
+          <li>No renovable</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20YouTube%20Premium%20Individual">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>YouTube Premium Familiar</h3>
+        <div class="price">S/8.00 por 1 mes</div>
+        <p>Plan familiar con activación en tu correo y acceso cómodo.</p>
+        <ul>
+          <li>Plan familiar</li>
+          <li>A tu mismo correo</li>
+          <li>No renovable</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20YouTube%20Premium%20Familiar">Comprar por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Spotify Premium</h3>
+        <div class="price">S/8.00 mensual</div>
+        <p>Música premium con acceso cómodo y uso personal.</p>
+        <ul>
+          <li>Entregamos correo y contraseña</li>
+          <li>Uso confidencial</li>
+          <li>Solo para usted</li>
+        </ul>
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Spotify%20Premium">Comprar por WhatsApp</a>
+      </div>
+
+    </section>
+
+    <section class="two-cols">
+      <div class="steps-box">
+        <h2>Cómo comprar</h2>
+        <p class="section-desc">Un proceso corto y fácil de seguir para evitar dudas en el cliente.</p>
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <div>Elige la plataforma que deseas.</div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div>Haz clic en comprar por WhatsApp.</div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div>Consulta disponibilidad y realiza tu pago.</div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div>Envía tu comprobante y recibe tu acceso.</div>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <h2>Atención directa</h2>
+        <p class="section-desc">Escríbenos para consultar disponibilidad, realizar tu compra o resolver cualquier duda.</p>
+
+        <div class="contact-info">
+          <strong>WhatsApp:</strong><br>
+          +51 921 197 481
+        </div>
+
+        <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20información%20sobre%20sus%20servicios">
+          Ir a WhatsApp
+        </a>
+
+        <div class="warning">
+          Antes de pagar, consulta disponibilidad del servicio que deseas solicitar.
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-box">
+      <h2>Preguntas frecuentes</h2>
+      <p class="section-desc">Esto ayuda bastante a que el cliente confíe y entienda el proceso antes de escribir.</p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>¿Cómo hago mi pedido?</h3>
+          <p>Selecciona la plataforma que deseas y escríbenos por WhatsApp para continuar con tu compra.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>¿Cómo se confirma la compra?</h3>
+          <p>Luego del pago, envías tu comprobante y se procesa tu pedido.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>¿Cuánto demora la entrega?</h3>
+          <p>La atención es rápida y la activación depende de la disponibilidad del servicio elegido.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      WorldStreamingOFF • Ventas rápidas por WhatsApp
+    </footer>
+
+  </div>
+
+</body>
+</html>
