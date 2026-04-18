@@ -288,6 +288,18 @@
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+    .app-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .app-logo {
+  transform: scale(1.1);
+}
   </style>
 </head>
 <body>
@@ -465,7 +477,10 @@
       </div>
 
       <div class="card">
-        <h3>Spotify Premium</h3>
+
+  <img class="app-logo spotify" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
+
+  <h3>Spotify Premium</h3>
         <div class="price">S/8.00 mensual</div>
         <p>Música premium con acceso cómodo y uso personal.</p>
         <ul>
