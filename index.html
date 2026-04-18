@@ -98,6 +98,8 @@
 
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   animation: fadeUp 0.8s ease;
+    opacity: 0;
+  animation-fill-mode: forwards;
 }
 .card:hover {
   transform: translateY(-10px) scale(1.03);
@@ -308,7 +310,7 @@
       Todo ordenado para que el cliente vea rápido el precio, beneficios y forma de compra.
     </p>
 
-    <section class="grid">
+    <section class="grid cards-container">
 
       <div class="card">
         <span class="badge">Más vendido</span>
