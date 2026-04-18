@@ -246,6 +246,7 @@
       }
     }
     .whatsapp-float {
+      animation: pulse 2s infinite;
   position: fixed;
   width: 60px;
   height: 60px;
@@ -262,7 +263,11 @@
   text-decoration: none;
   transition: transform 0.2s ease;
 }
-
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
