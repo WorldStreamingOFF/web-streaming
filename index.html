@@ -300,6 +300,26 @@
 .card:hover .app-logo {
   transform: scale(1.1);
 }
+    .card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: rotate(25deg);
+  top: -100%;
+  left: -100%;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  top: 100%;
+  left: 100%;
+}
+    .card * {
+  position: relative;
+  z-index: 2;
+}
   </style>
 </head>
 <body>
@@ -324,7 +344,7 @@
 
     <section class="grid cards-container">
 
-      <div class="card">
+      <div class="card netflix-card">
         <span class="badge">Más vendido</span>
         <h3>Netflix Premium</h3>
         <div class="price">S/18.00 mensual</div>
@@ -337,7 +357,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Netflix%20Premium">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card prime-card">
         <h3>Prime Video</h3>
         <div class="price">S/7.00 mensual</div>
         <p>Series, películas y contenido exclusivo con acceso rápido.</p>
@@ -349,7 +369,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Prime%20Video">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card disney-card">
         <span class="badge">4K</span>
         <h3>Disney+ Premium</h3>
         <div class="price">S/10.00 mensual</div>
@@ -362,7 +382,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Disney+%20Premium">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card max-card">
         <span class="badge">4K</span>
         <h3>Max Platino</h3>
         <div class="price">S/8.00 mensual</div>
@@ -375,7 +395,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Max%20Platino">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card max-card">
         <h3>Max Standard</h3>
         <div class="price">S/5.00 mensual</div>
         <p>Opción práctica para disfrutar contenido de Max.</p>
@@ -386,7 +406,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Max%20Standard">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card crunchy-card">
         <h3>Crunchyroll</h3>
         <div class="price">S/5.00 mensual</div>
         <p>Anime y series para disfrutar sin complicaciones.</p>
@@ -397,7 +417,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Crunchyroll">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card paramount-card">
         <h3>Paramount+</h3>
         <div class="price">S/7.00 mensual</div>
         <p>Películas, series y contenido variado en una sola plataforma.</p>
@@ -408,7 +428,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Paramount%2B">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card vix-card">
         <h3>Vix Premium</h3>
         <div class="price">S/5.00 mensual</div>
         <p>Contenido latino y entretenimiento premium.</p>
@@ -419,7 +439,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Vix%20Premium">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card chatgpt-card">
         <h3>ChatGPT</h3>
         <div class="price">S/10.00 mensual</div>
         <p>Herramienta útil para estudio, trabajo y productividad.</p>
@@ -430,7 +450,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20ChatGPT">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card iptv-card">
         <h3>IPTV</h3>
         <div class="price">S/10.00 mensual</div>
         <p>Canales en vivo y variedad de contenido en un solo servicio.</p>
@@ -441,7 +461,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20IPTV">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card canva-card">
         <h3>Canva Pro</h3>
         <div class="price">S/3.00 mensual</div>
         <p>Diseño y herramientas premium activadas en tu propio correo.</p>
@@ -452,7 +472,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20Canva%20Pro">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card youtube-card">
         <h3>YouTube Premium Individual</h3>
         <div class="price">S/5.00 por 1 mes</div>
         <p>Disfruta YouTube sin anuncios con activación en tu correo.</p>
@@ -464,7 +484,7 @@
         <a class="btn" href="https://wa.me/51921197481?text=Hola,%20quiero%20YouTube%20Premium%20Individual">Comprar por WhatsApp</a>
       </div>
 
-      <div class="card">
+      <div class="card youtube-card">
         <h3>YouTube Premium Familiar</h3>
         <div class="price">S/8.00 por 1 mes</div>
         <p>Plan familiar con activación en tu correo y acceso cómodo.</p>
