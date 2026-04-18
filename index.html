@@ -135,6 +135,25 @@
   50% { transform: scale(1.4); }
   100% { transform: scale(1); }
 }
+    .sales-alert {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  z-index: 999;
+  animation: floatAlert 2s infinite ease-in-out;
+}
+
+@keyframes floatAlert {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
     .card {
       position: relative;
       overflow: hidden;
@@ -747,6 +766,9 @@
 <div class="online-status">
   <span class="dot"></span>
   En línea ahora
+</div>
+  <div class="sales-alert">
+  🔥 Alta demanda ahora mismo
 </div>
 </body>
 </html>
