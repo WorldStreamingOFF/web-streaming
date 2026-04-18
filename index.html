@@ -105,7 +105,36 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+.online-status {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+}
 
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+  animation: onlinePulse 1.5s infinite;
+}
+
+@keyframes onlinePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
     .card {
       position: relative;
       overflow: hidden;
@@ -715,6 +744,9 @@
   <a href="https://wa.me/51921197481?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30" alt="WhatsApp">
   </a>
-
+<div class="online-status">
+  <span class="dot"></span>
+  En línea ahora
+</div>
 </body>
 </html>
