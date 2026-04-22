@@ -49,42 +49,43 @@ rgba(0,0,0,0.18) 100%
   justify-content: center;
   min-height: 85vh;
 }
+/* ===== HERO VIEJO DESACTIVADO COMPLETO =====
+.hero span {
+  display: inline-block;
+  background: rgba(34, 211, 238, 0.12);
+  color: #07e8f9;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
 
-    .hero span {
-      display: inline-block;
-      background: rgba(34, 211, 238, 0.12);
-      color: #67e8f9;
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.2;
+}
 
-    .hero h1 {
-      margin: 0;
-      font-size: 42px;
-      line-height: 1.2;
-    }
+.hero p {
+  color: #cbd5e1;
+  max-width: 760px;
+  margin: 20px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-    .hero p {
-      color: #cbd5e1;
-      max-width: 760px;
-      margin: 20px auto 0;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.hero-note {
+  margin-top: 25px;
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.12);
+  color: #47f3d0;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
 
-    .hero-note {
-      margin-top: 25px;
-      display: inline-block;
-      background: rgba(16, 185, 129, 0.12);
-      color: #a7f3d0;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-size: 14px;
-      border: 1px solid rgba(16, 185, 129, 0.2);
-    }
-
+*/
     .section-title {
       font-size: 32px;
       margin-top: 50px;
@@ -528,28 +529,124 @@ rgba(0,0,0,0.18) 100%
   content: "🔴 Agotado";
   color: #ef4444;
 }
+    /* ===== HERO NUEVO ===== */
+
+.hero-content {
+  max-width: 550px;
+  text-align: left;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #12e7df;
+  display: block;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 25px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #fff;
+  padding: 16px 26px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(37,211,102,0.5);
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-cards {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  flex: 1;
+  min-width: 140px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+}
   </style>
 </head>
 <body>
 
   <div class="container">
 
-    <section class="hero">
-      <span>WorldStreamingOFF</span>
+<section class="hero">
+  <div class="hero-content">
 
-<h1>Bienvenidos a WorldStreamingOFF</h1>
+    <span class="hero-badge">⚡ WorldStreamingOFF</span>
 
-<p class="empresa-texto">
-  Somos una empresa dedicada a brindar servicios digitales de alta calidad, con soporte constante y un equipo comprometido en ofrecer atención responsable y eficiente.<br><br>
-  Nuestra prioridad es garantizar una experiencia segura, confiable y transparente en cada compra.
-</p>
+    <h1>
+      Tus suscripciones
+      <span>digitales, rápidas</span>
+      y seguras
+    </h1>
 
-<p>
-Accede a tus plataformas favoritas con activación inmediata ⚡ y soporte garantizado por WhatsApp 💬
-</p>
+    <p class="hero-text">
+      Activación inmediata, atención por WhatsApp y soporte durante todo el servicio.
+    </p>
 
-<div class="hero-note">
-        Entrega inmediata ⚡ | Soporte durante todo el servicio
+    <a href="https://wa.me/51921197481" class="hero-btn">
+      💬 Solicitar por WhatsApp ➜
+    </a>
+
+    <div class="hero-cards">
+      <div class="hero-card">
+        ⚡ Activación inmediata
+      </div>
+
+      <div class="hero-card">
+        🛡️ Soporte garantizado
+      </div>
+
+      <div class="hero-card">
+        🎧 Atención rápida
+      </div>
+    </div>
+
+    <div class="hero-footer-note">
+      🛒 Compra segura • 100% confiable • Sin riesgos
+    </div>
+
+  </div>
+</section>
       </div>
     </section>
 
