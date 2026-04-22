@@ -24,17 +24,31 @@
       padding: 20px;
     }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding: 60px 20px;
-      border-radius: 20px;
-      margin-top: 20px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+.hero {
+  background: linear-gradient(
+    90deg,
+rgba(0,0,0,0.96) 0%,
+rgba(0,0,0,0.80) 30%,
+rgba(0,0,0,0.45) 60%,
+rgba(0,0,0,0.18) 100%
+  ), url('fondo.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+
+  padding: 80px 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 85vh;
+}
 
     .hero span {
       display: inline-block;
