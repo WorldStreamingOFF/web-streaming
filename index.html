@@ -329,17 +329,27 @@ img {
   50% { transform: scale(1.4); }
   100% { transform: scale(1); }
 }
-    .sales-alert {
+.sales-alert {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
+  right: 80px; /* 🔥 clave: lo pegamos al botón */
+  bottom: 10px;
+
   background: rgba(0,0,0,0.85);
   color: white;
-  padding: 12px 16px;
-  border-radius: 16px;
-  font-size: 13px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content; /* 🔥 evita que se estire */
+  white-space: nowrap;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   z-index: 999;
+
   animation: floatAlert 2s infinite ease-in-out;
 }
 
