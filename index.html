@@ -198,7 +198,53 @@ img {
     padding: 18px 16px;
     border-radius: 18px;
   }
+}
+@media (max-width: 600px) {
 
+  .hero {
+    min-height: auto;
+    padding: 32px 16px 120px;
+    border-radius: 18px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.72) 35%,
+        rgba(0,0,0,0.92) 100%
+      ),
+      url('fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: 32px !important;
+    line-height: 1.05;
+    margin: 0 0 14px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}
   .card h2,
   .card h3 {
     font-size: 18px;
