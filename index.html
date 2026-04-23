@@ -952,12 +952,19 @@ img {
 .schedule-box p {
   font-size: 1.2rem;
   color: #e6eeff;
-  margin: 12px 0;
   line-height: 1.7;
+
+  background: rgba(255,255,255,0.04);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 153, 255, 0.15);
+  margin: 12px 0;
+  transition: 0.25s;
 }
 
-.schedule-box strong {
-  color: #ffffff;
+.schedule-box p:hover {
+  background: rgba(0, 153, 255, 0.12);
+  transform: translateX(4px);
 }
   </style>
 </head>
