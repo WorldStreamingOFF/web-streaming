@@ -115,17 +115,21 @@ rgba(0,0,0,0.18) 100%
 
 /* CELULAR */
 @media (max-width: 600px) {
+
+  body {
+    padding: 0; /* 🔥 quitamos padding global */
+  }
+
   .grid {
     grid-template-columns: 1fr;
     justify-content: center;
-    max-width: 340px;   /* 🔥 más equilibrado */
-    margin: auto;
-    padding: 0;         /* 🔥 quitar padding */
+    max-width: 320px;   /* 🔥 ancho limpio */
+    margin: 0 auto;
   }
 
   .card {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;   /* 🔥 ajuste perfecto */
     margin: 0 auto;
   }
 }
